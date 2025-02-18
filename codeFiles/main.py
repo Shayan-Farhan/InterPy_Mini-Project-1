@@ -1,4 +1,5 @@
 import pandas as pd
+import matplotlib.pyplot as plt
 
 dataframe = pd.read_csv("dataFiles/Housing.csv")
 
@@ -17,3 +18,8 @@ prices = dataframe['price']
 yearsBuilt = dataframe['yr_built']
 
 #graph price vs. square footage
+fig, ax = plt.subplots()
+ax.set(xlabel="Year Built", ylabel="Price", title="Price vs. Year Built")
+ax.grid()
+ax.plot(yearsBuilt, prices)
+plt.show()
