@@ -36,7 +36,9 @@ for i in range(len(housesByDecade)):
 averagePriceByDecade = []
 for i in range(len(pricesByDecade)):
     averagePriceByDecade.append(int(pricesByDecade[i].mean()))
-print(averagePriceByDecade)
+
+decades = [1900, 1910, 1920, 1930, 1940, 1950, 1960, 1970, 1980, 1990, 2000, 2010]
+
 
 
 """graph bar chart of price vs. year built
