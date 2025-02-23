@@ -15,7 +15,6 @@ def step1():
 dataframe.sort_values('yr_built', inplace=True)
 
 #extract data for price and years built
-prices = dataframe['price']
 housesByDecade = [dataframe[(dataframe['yr_built'] >= 1900) & (dataframe['yr_built'] < 1910)],
                   dataframe[(dataframe['yr_built'] >= 1910) & (dataframe['yr_built'] < 1920)],
                   dataframe[(dataframe['yr_built'] >= 1920) & (dataframe['yr_built'] < 1930)],
@@ -30,9 +29,14 @@ housesByDecade = [dataframe[(dataframe['yr_built'] >= 1900) & (dataframe['yr_bui
                   dataframe[dataframe['yr_built'] >= 2010]
                   ]
 
-decadesBuilt = []
+pricesByDecade = []
 for i in range(len(housesByDecade)):
-    decadesBuilt.append(housesByDecade[i]['yr_built'])
+    pricesByDecade.append(housesByDecade[i]['price'])
+
+averagePriceByDecade = []
+for i in range(len(pricesByDecade)):
+    averagePriceByDecade.append(int(pricesByDecade[i].mean()))
+print(averagePriceByDecade)
 
 
 """graph bar chart of price vs. year built
