@@ -39,7 +39,15 @@ for i in range(len(pricesByDecade)):
 
 decades = [1900, 1910, 1920, 1930, 1940, 1950, 1960, 1970, 1980, 1990, 2000, 2010]
 
+#function to display bar chart
+def barChart(categories, values):
+    plt.bar(categories, values)
+    plt.xlabel('Decade Built')
+    plt.ylabel('Average Price')
+    plt.title("Average Housing Price by Decade Built")
+    plt.show()
 
+barChart(decades, averagePriceByDecade)
 
 """graph bar chart of price vs. year built
 fig, ax = plt.subplots()
